@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Dotfiles Management
+
+# ./dotfiles
+#     /bash
+#         /aliases
+#         /config
+#         /env
+#         /functions
+#     /ssh
+#         config
+#     bashrc
+#     bash_profile
+#     gitconfig
+#     gitignore
+#     pythonrc
+#     vimrc
+
+DOT_PATH=~/Dropbox/code/dotfiles
+
+if [ -d ~/Dropbox/code/dotfiles ]; then
+
+        for file in $DOT_PATH/*
+        do
+            fileWithoutPath=$(basename $file)
+            if [[ -d $file ]]; then
+                echo "Skipped --> $file"
+            elif [[ -f $file ]]; then
+                   
+                if [[ -f ~/.$fileWithoutPath ]]; then
+                    echo "Exists --> $fileWithoutPath"
+                else
+                    ln -s $file ~/.$fileWithoutPath
+                    echo "Symlinked --> $fileWithoutPath"
+                fi
+            fi
+        done
+        
+        if [[ -f ~/.ssh/config ]]; then
+            echo "Exists --> ssh/config"
+        else
+            ln -s $DOT_PATH/ssh/config ~/.ssh/config
+            echo "Symlinked --> ssh/config"
+        fi
+    
+else
+    echo "\n<ERROR> dotfiles directory does not exist..."
+fi

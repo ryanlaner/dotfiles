@@ -1,0 +1,11 @@
+[user]
+	name = Ryan Lane
+	email = ryanl@qti.qualcomm.com
+[color]
+    ui = true
+[core]
+	quotepath = false
+    excludesfile = $HOME/.gitignore
+    editor = bbedit --wait --resume
+[push]
+	default = simple

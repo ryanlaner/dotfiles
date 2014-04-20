@@ -1,0 +1,16 @@
+Host hurler
+	HostName hurler.qualcomm.com
+	User ryanl
+ 
+Host ryanl
+	HostName ryanl-mac.qualcomm.com
+	User ryanl 
+ 
+Host R2D2 
+	User ryanlaner 
+	HostName R2D2.1416705324.members.btmm.icloud.com
+	AddressFamily inet6
+	Protocol 2
+
+ 
+ 

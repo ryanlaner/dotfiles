@@ -1,0 +1,95 @@
+### Utility
+# Remove files to .Trash
+function rmf(){
+    for file in $*
+    do
+        __rm_single_file $file
+    done
+}
+
+function __rm_single_file(){
+    if ! [ -d ~/.Trash/ ]
+    then
+        command /bin/mkdir ~/.Trash
+    fi
+
+    if ! [ $# -eq 1 ]
+    then
+        echo "__rm_single_file: 1 argument required but $# passed."
+        exit
+    fi
+
+    if [ -e $1 ]
+    then
+        BASENAME=`basename $1`
+        NAME=$BASENAME
+        COUNT=0
+        while [ -e ~/.Trash/$NAME ]
+        do
+            COUNT=$(($COUNT+1))
+            NAME="$BASENAME.$COUNT"
+        done
+
+        command /bin/mv $1 ~/.Trash/$NAME
+    else
+        echo "No such file or directory: $file"
+    fi
+}
+
+### Dash (replace man)
+
+function dash()
+{
+    open dash://manpages:"$@"
+}
+
+
+### Git
+# Commit verbose with command line free from commit message
+function gg() {
+    git commit -v -a -m "$*"
+}
+
+
+### Finder Tag list
+# via [Brett Terpstra](http://brettterpstra.com/2013/10/28/mavericks-tags-spotlight-and-terminal/)
+# List files with specified Finder tags in current directory
+# Works with partial words starting from the beginning of the word
+
+lst() {
+	# if the first argument is "AND" (case insensitive),
+	# a boolean AND search will be used. Defaults to OR.
+	bool="OR"
+	[[ $1 =~ "and" ]] && bool="AND" && shift
+ 
+	first=true
+	for tag in $@; do
+		if $first; then
+			query="tag:$tag"
+			first=false
+		else
+			query="$query $bool tag:$tag"
+		fi
+	done
+ 
+	results=$(mdfind -onlyin . "$query")
+	for line in $results; do
+		echo ${line#`pwd`/} # make result paths relative to pwd
+	done
+}
+
+# iterm
+
+tab() # new tab from current dir
+{
+osascript -e "
+tell application \"iTerm\"
+ tell the first terminal
+  launch session \"Default Session\"
+  tell the last session
+   write text \"cd $(pwd)\"
+  end tell
+ end tell
+end tell"
+}
+

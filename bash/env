@@ -1,0 +1,12 @@
+### Global Path Settings
+export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/usr/texbin
+export PATH=$PATH:/Applications
+
+### Tool Path Settings
+export PATH=$PATH:/usr/local/git/bin
+export PYTHONSTARTUP=$HOME/.pythonrc
+export EDITOR="bbedit -w"

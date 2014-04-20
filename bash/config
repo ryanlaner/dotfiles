@@ -1,0 +1,11 @@
+### Prompt
+PS1="[\u@$(scutil --get ComputerName):\w]\\$ "
+PS1='\n'"$PS1"
+
+### Colors
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+### History editor
+# set -o vi
+set -o emacs

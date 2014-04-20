@@ -1,0 +1,80 @@
+### Utility
+alias c='clear'
+alias e='exit'
+alias h='history'
+alias reload='source ~/.bashrc' 
+alias o='open'
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user' 
+alias man=dash
+alias wifi="networksetup -setairportpower en0"
+
+
+### Open Files
+alias oalias='bbedit ~/Dropbox/code/dotfiles/bash/aliases'
+alias oconfig='bbedit ~/Dropbox/code/dotfiles/bash/config'
+alias oenv='bbedit ~/Dropbox/code/dotfiles/bash/env'
+alias ofunctions='bbedit ~/Dropbox/code/dotfiles/bash/functions'
+
+### Processes
+alias tu='top -o cpu'
+alias tm='top -o vsize'
+alias psg='ps -e | grep '			# find process with grep
+
+### Listing
+alias l='ls -alh'
+alias ll='ls –color=always -alh | less'
+alias lr='ls -alhsr'
+alias lrl='ls –color=yes -alhsr | less'
+alias l1='ls -1'
+alias l1l='ls –color=always -1 | less'
+alias lg='ls | grep -i '  # list with grep
+# alias lga='grep -Hrnl $#argv ./ '  # list with grep
+        
+
+### Directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias bin="cd ~/bin"
+alias desk="cd ~/Desktop"
+alias app="cd /Applications"
+alias doc="cd ~/Documents"
+alias notes='cd ~/Dropbox/Notes'
+alias note='cd ~/Dropbox/Notes'
+alias down="cd ~/Downloads"
+alias pictures="cd ~/Pictures"
+alias lib="cd ~/Library"
+alias db="cd ~/Dropbox"
+alias code='cd ~/Dropbox/code'
+alias qn='cd /Volumes/qvault/qnotes'
+alias qc='cd /Volumes/qvault/qcode'
+alias qn='cd /Volumes/qvault/qnotes'
+alias qi='cd /Volumes/qvault/_qinbox'
+alias qa='cd /Volumes/qvault/qarchive'
+alias qd='cd /Volumes/qvault/_qdraft'
+alias qv='cd /Volumes/qvault'
+
+### Unix & Custom Tools
+alias vi='/usr/bin/vim' 
+alias tree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
+alias ph="nph"
+alias bb='bbedit'
+
+### Finder & Dock
+alias ql='qlmanage -p'
+alias redock='killall Dock'         # Restart dock
+alias refinder='killall Finder'		# Restart finder
+
+### Git
+alias g='git status'
+alias ga='git add .'
+alias gl='git log --decorate --oneline'
+alias gco='git checkout'
+alias gci='git commit -am'
+alias gpush='git push origin master'
+alias gpull='git pull origin master'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gd='git diff'
+alias gk='gitk --all 2> /dev/null &'
