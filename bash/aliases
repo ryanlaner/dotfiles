@@ -4,10 +4,16 @@ alias e='exit'
 alias h='history'
 alias reload='source ~/.bashrc' 
 alias o='open'
+alias f='open -a Finder'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user' 
-alias man=dash
+alias man=dman # dman function in functions bash
 alias wifi="networksetup -setairportpower en0"
+alias con="tail -40 -f /var/log/system.log"
+alias h="history"
+alias hg="history | grep "
 
+### Search
+alias google='open http://www.google.com/search?q="'
 
 ### Open Files
 alias oalias='bbedit ~/Dropbox/code/dotfiles/bash/aliases'
@@ -29,24 +35,27 @@ alias l1='ls -1'
 alias l1l='ls –color=always -1 | less'
 alias lg='ls | grep -i '  # list with grep
 # alias lga='grep -Hrnl $#argv ./ '  # list with grep
-        
+       
+## Search
+
+alias mdf="mdfind -onlyin ." 
 
 ### Directories
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias bin="cd ~/bin"
-alias desk="cd ~/Desktop"
+alias -- -='cd -'
 alias app="cd /Applications"
-alias doc="cd ~/Documents"
-alias notes='cd ~/Dropbox/Notes'
-alias note='cd ~/Dropbox/Notes'
-alias down="cd ~/Downloads"
-alias pictures="cd ~/Pictures"
-alias lib="cd ~/Library"
-alias db="cd ~/Dropbox"
+alias bin="cd ~/bin"
 alias code='cd ~/Dropbox/code'
+alias db="cd ~/Dropbox"
+alias dt="cd ~/Desktop"
+alias dl="cd ~/Downloads"
+alias nt='cd ~/Dropbox/Notes'
+alias lb="cd ~/Library"
+alias pictures="cd ~/Pictures"
+alias tr='cd ~/Transporter'
 alias qn='cd /Volumes/qvault/qnotes'
 alias qc='cd /Volumes/qvault/qcode'
 alias qn='cd /Volumes/qvault/qnotes'
@@ -57,9 +66,19 @@ alias qv='cd /Volumes/qvault'
 
 ### Unix & Custom Tools
 alias vi='/usr/bin/vim' 
-alias tree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
+
+# tree with directories shown
+if [ ! -x "$(which tree 2>/dev/null)" ]
+then
+  alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+fi
+
+# alternate tree with only directories shown
+# alias tree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
+
 alias ph="nph"
 alias bb='bbedit'
+alias bbf='bbfind'
 
 ### Finder & Dock
 alias ql='qlmanage -p'
@@ -76,5 +95,7 @@ alias gpush='git push origin master'
 alias gpull='git pull origin master'
 alias gb='git branch'
 alias gba='git branch -a'
+alias gmv='git mv'
+alias grm='git rm'
 alias gd='git diff'
 alias gk='gitk --all 2> /dev/null &'

@@ -1,5 +1,6 @@
 ### Prompt
-PS1="[\u@$(scutil --get ComputerName):\w]\\$ "
+# PS1="[\u@$(scutil --get ComputerName):\w]\\$ "
+PS1="\e[0;31m\u\e[m@\e[0;93m$(scutil --get ComputerName)\e[m[\e[1;36m\w\e[m]\n$ "
 PS1='\n'"$PS1"
 
 ### Colors
@@ -8,4 +9,9 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 ### History editor
 # set -o vi
-set -o emacs
+# set -o emacs
+
+## Bind History
+
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'

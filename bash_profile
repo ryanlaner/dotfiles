@@ -9,3 +9,9 @@ fi
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
+
+# added by Anaconda 1.9.2 installer
+export PATH="/Users/ryanlaner/anaconda/bin:$PATH"
+
+# added by Anaconda 1.9.2 installer
+export PATH="/Users/ryanl/anaconda/bin:$PATH"

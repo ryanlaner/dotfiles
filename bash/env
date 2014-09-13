@@ -6,6 +6,8 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/usr/texbin
 export PATH=$PATH:/Applications
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 ### Tool Path Settings
 export PATH=$PATH:/usr/local/git/bin
 export PYTHONSTARTUP=$HOME/.pythonrc
