@@ -21,10 +21,23 @@ alias oconfig='bbedit ~/Dropbox/code/dotfiles/bash/config'
 alias oenv='bbedit ~/Dropbox/code/dotfiles/bash/env'
 alias ofunctions='bbedit ~/Dropbox/code/dotfiles/bash/functions'
 
+### Open note Files
+alias list='bb ~/Dropbox/Notes/Lists'
+alias lists='bb ~/Dropbox/Notes/Lists'
+
 ### Processes
 alias tu='top -o cpu'
 alias tm='top -o vsize'
 alias psg='ps -e | grep '			# find process with grep
+
+### Tool & Apps
+alias ph="nph"
+alias bb='bbedit'
+alias bbf='bbfind'
+alias ql='qlmanage -p'
+alias redock='killall Dock'         # Restart dock
+alias refinder='killall Finder'		# Restart finder
+alias mdf="mdfind -onlyin ." 
 
 ### Listing
 alias l='ls -alh'
@@ -35,10 +48,7 @@ alias l1='ls -1'
 alias l1l='ls –color=always -1 | less'
 alias lg='ls | grep -i '  # list with grep
 # alias lga='grep -Hrnl $#argv ./ '  # list with grep
-       
-## Search
 
-alias mdf="mdfind -onlyin ." 
 
 ### Directories
 alias ..="cd .."
@@ -56,6 +66,10 @@ alias nt='cd ~/Dropbox/Notes'
 alias lb="cd ~/Library"
 alias pictures="cd ~/Pictures"
 alias tr='cd ~/Transporter'
+alias tpl='cd ~/Dropbox/Notes/ToDo'
+alias lsl='cd ~/Dropbox/Notes/Lists'
+
+# qcom
 alias qn='cd /Volumes/qvault/qnotes'
 alias qc='cd /Volumes/qvault/qcode'
 alias qn='cd /Volumes/qvault/qnotes'
@@ -66,6 +80,7 @@ alias qv='cd /Volumes/qvault'
 
 ### Unix & Custom Tools
 alias vi='/usr/bin/vim' 
+alias chmodx='chmod +x'
 
 # tree with directories shown
 if [ ! -x "$(which tree 2>/dev/null)" ]
@@ -76,22 +91,14 @@ fi
 # alternate tree with only directories shown
 # alias tree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
 
-alias ph="nph"
-alias bb='bbedit'
-alias bbf='bbfind'
-
-### Finder & Dock
-alias ql='qlmanage -p'
-alias redock='killall Dock'         # Restart dock
-alias refinder='killall Finder'		# Restart finder
-
 ### Git
 alias g='git status'
-alias ga='git add .'
+alias ga='git add -A .'
 alias gl='git log --decorate --oneline'
 alias gco='git checkout'
 alias gci='git commit -am'
 alias gpush='git push origin master'
+alias gpushtag='git push origin master && git push --tags'
 alias gpull='git pull origin master'
 alias gb='git branch'
 alias gba='git branch -a'
