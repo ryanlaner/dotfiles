@@ -1,11 +1,17 @@
 [user]
 	name = Ryan Lane
-	email = ryanl@qti.qualcomm.com
+	email = ryanlaner@me.com
 [color]
     ui = true
 [core]
 	quotepath = false
-    excludesfile = $HOME/.gitignore
-    editor = bbedit --wait --resume
+	excludesfile = /Users/ryanlaner/.gitignore_global
+	editor = bbedit --wait --resume
 [push]
 	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

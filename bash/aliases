@@ -4,7 +4,7 @@ alias e='exit'
 alias h='history'
 alias reload='source ~/.bashrc' 
 alias o='open'
-alias f='open -a Finder'
+alias f='open -a Finder .'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user' 
 alias man=dman # dman function in functions bash
 alias wifi="networksetup -setairportpower en0"
@@ -16,14 +16,19 @@ alias hg="history | grep "
 alias google='open http://www.google.com/search?q="'
 
 ### Open Files
-alias oalias='bbedit ~/Dropbox/code/dotfiles/bash/aliases'
-alias oconfig='bbedit ~/Dropbox/code/dotfiles/bash/config'
-alias oenv='bbedit ~/Dropbox/code/dotfiles/bash/env'
-alias ofunctions='bbedit ~/Dropbox/code/dotfiles/bash/functions'
+
+# editorChoice="bbedit"
+editorChoice="subl"
+
+alias oalias='$editorChoice ~/Dropbox/code/dotfiles/bash/aliases'
+alias oconfig='$editorChoice ~/Dropbox/code/dotfiles/bash/config'
+alias oenv='$editorChoice ~/Dropbox/code/dotfiles/bash/env'
+alias ofunctions='$editorChoice ~/Dropbox/code/dotfiles/bash/functions'
 
 ### Open note Files
-alias list='bb ~/Dropbox/Notes/Lists'
-alias lists='bb ~/Dropbox/Notes/Lists'
+alias list='$editorChoice ~/Dropbox/Notes/tpLists'
+alias lists='$editorChoice ~/Dropbox/Notes/tpLists'
+alias tpl='$editorChoice ~/Dropbox/Notes/tpLists'
 
 ### Processes
 alias tu='top -o cpu'
@@ -34,7 +39,7 @@ alias psg='ps -e | grep '			# find process with grep
 alias ph="nph"
 alias bb='bbedit'
 alias bbf='bbfind'
-alias ql='qlmanage -p'
+# alias ql='qlmanage -p &>/dev/null'
 alias redock='killall Dock'         # Restart dock
 alias refinder='killall Finder'		# Restart finder
 alias mdf="mdfind -onlyin ." 
@@ -59,6 +64,7 @@ alias -- -='cd -'
 alias app="cd /Applications"
 alias bin="cd ~/bin"
 alias code='cd ~/Dropbox/code'
+alias beta='cd ~/Dropbox/code/_beta'
 alias db="cd ~/Dropbox"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
@@ -66,8 +72,6 @@ alias nt='cd ~/Dropbox/Notes'
 alias lb="cd ~/Library"
 alias pictures="cd ~/Pictures"
 alias tr='cd ~/Transporter'
-alias tpl='cd ~/Dropbox/Notes/ToDo'
-alias lsl='cd ~/Dropbox/Notes/Lists'
 
 # qcom
 alias qn='cd /Volumes/qvault/qnotes'

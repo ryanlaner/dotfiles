@@ -1,4 +1,44 @@
 ### Utility
+
+# Batch change extensions
+
+function chgext {
+    for file in *.$1 ; do mv "$file" "${file%.$1}.$2" ; done
+}
+
+
+
+# Finder to terminal
+
+function cdf {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
+}
+
+# Quick look
+
+function ql {
+    qlmanage -p &>/dev/null $1 &
+}
+
+# Get image size
+
+function imgsize {
+    local width height
+    if [[ -f $1 ]]; then
+        height=$(sips -g pixelHeight "$1"|tail -n 1|awk '{print $2}')
+        width=$(sips -g pixelWidth "$1"|tail -n 1|awk '{print $2}')
+        echo "${width} x ${height}"
+    else
+        echo "File not found"
+    fi
+}
+
 # Remove files to .Trash
 function rmf(){
     for file in $*

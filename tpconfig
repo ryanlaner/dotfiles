@@ -1,5 +1,6 @@
-# Relative Home paths to .taskpaper files example --> /Dropbox/Tasks/Todo.taskpaper
-/Dropbox/Notes/ToDo/tpHome.taskpaper
-/Dropbox/Notes/ToDo/tpMe.taskpaper
-/Dropbox/Notes/ToDo/tpWork.taskpaper
-/Dropbox/Notes/ToDo/
+# Relative Home paths to a specific .taskpaper file
+/Dropbox/Notes/tpLists/tpJedi.taskpaper
+
+# Relative path to a folder containing taskpaper files
+# /Dropbox/Notes/ToDo/
+
