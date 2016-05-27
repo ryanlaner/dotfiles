@@ -1,9 +1,9 @@
 #!/bin/bash
 
-source ~/Dropbox/code/dotfiles/bash/aliases
-source ~/Dropbox/code/dotfiles/bash/config
-source ~/Dropbox/code/dotfiles/bash/env
-source ~/Dropbox/code/dotfiles/bash/functions
+source ~/code/dotfiles/bash/aliases
+source ~/code/dotfiles/bash/config
+source ~/code/dotfiles/bash/env
+source ~/code/dotfiles/bash/functions
 source ~/.git-completion
 source ~/.git-prompt
 

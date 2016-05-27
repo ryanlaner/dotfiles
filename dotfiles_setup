@@ -17,9 +17,9 @@
 #     pythonrc
 #     vimrc
 
-DOT_PATH=~/Dropbox/code/dotfiles
+DOT_PATH=~/code/dotfiles
 
-if [ -d ~/Dropbox/code/dotfiles ]; then
+if [ -d ~/code/dotfiles ]; then
 
         for file in $DOT_PATH/*
         do
