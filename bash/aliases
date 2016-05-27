@@ -27,10 +27,10 @@ editorChoice="bbedit"
 # editorChoice="subl"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-alias oalias='$editorChoice ~/Dropbox/code/dotfiles/bash/aliases'
-alias oconfig='$editorChoice ~/Dropbox/code/dotfiles/bash/config'
-alias oenv='$editorChoice ~/Dropbox/code/dotfiles/bash/env'
-alias ofunctions='$editorChoice ~/Dropbox/code/dotfiles/bash/functions'
+alias oalias='$editorChoice ~/code/dotfiles/bash/aliases'
+alias oconfig='$editorChoice ~/code/dotfiles/bash/config'
+alias oenv='$editorChoice ~/code/dotfiles/bash/env'
+alias ofunctions='$editorChoice ~/code/dotfiles/bash/functions'
 
 ### Open note Files
 alias list='$editorChoice ~/Dropbox/notes/tpLists'
@@ -72,7 +72,7 @@ alias .....="cd ../../../.."
 alias -- -='cd -'
 alias app="cd /Applications"
 alias bin="cd ~/bin"
-alias code='cd ~/Dropbox/code'
+alias code='cd ~/code'
 alias db="cd ~/Dropbox"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
