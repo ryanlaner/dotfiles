@@ -62,6 +62,6 @@ bind up:alt;ctrl;cmd corner top-left resize:screenSizeX;screenSizeY
 # alias editor 'BBEdit'
 # bind z:alt;shift focus ${editor}
 
-bind j:cmd;alt;ctrl grid padding:1 0:19,9
+# bind j:cmd;alt;ctrl grid padding:1 0:19,9
 
 # bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want

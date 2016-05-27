@@ -27,7 +27,7 @@ if [ -d ~/Dropbox/code/dotfiles ]; then
             if [[ -d $file ]]; then
                 echo "Skipped --> $file"
             elif [[ -f $file ]]; then
-                   
+
                 if [[ -f ~/.$fileWithoutPath ]]; then
                     echo "Exists --> $fileWithoutPath"
                 else
@@ -36,14 +36,22 @@ if [ -d ~/Dropbox/code/dotfiles ]; then
                 fi
             fi
         done
-        
+
         if [[ -f ~/.ssh/config ]]; then
             echo "Exists --> ssh/config"
         else
             ln -s $DOT_PATH/ssh/config ~/.ssh/config
             echo "Symlinked --> ssh/config"
         fi
-    
+
+        if [[ -f ~/.atom ]]; then
+            echo "Exists --> atom"
+        else
+            ln -s $DOT_PATH/atom ~/.atom
+            echo "Symlinked --> atom"
+        fi
+
+
 else
     echo "\n<ERROR> dotfiles directory does not exist..."
 fi

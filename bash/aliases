@@ -2,23 +2,30 @@
 alias c='clear'
 alias e='exit'
 alias h='history'
-alias reload='source ~/.bashrc' 
+alias reload='source ~/.bashrc'
 alias o='open'
 alias f='open -a Finder .'
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user' 
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 alias man=dman # dman function in functions bash
 alias wifi="networksetup -setairportpower en0"
 alias con="tail -40 -f /var/log/system.log"
 alias h="history"
 alias hg="history | grep "
 
+# Local directory served as web page
+alias serve="python -m SimpleHTTPServer"
+
 ### Search
 alias google='open http://www.google.com/search?q="'
 
-### Open Files
+# Search current directory and below showing file and line with search term
+alias findg="find . -type f -print0 | xargs -0 grep -Ini --color=auto"
 
-# editorChoice="bbedit"
-editorChoice="subl"
+### Open Files
+# editorChoice="atom"
+editorChoice="bbedit"
+# editorChoice="subl"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 alias oalias='$editorChoice ~/Dropbox/code/dotfiles/bash/aliases'
 alias oconfig='$editorChoice ~/Dropbox/code/dotfiles/bash/config'
@@ -26,9 +33,9 @@ alias oenv='$editorChoice ~/Dropbox/code/dotfiles/bash/env'
 alias ofunctions='$editorChoice ~/Dropbox/code/dotfiles/bash/functions'
 
 ### Open note Files
-alias list='$editorChoice ~/Dropbox/Notes/tpLists'
-alias lists='$editorChoice ~/Dropbox/Notes/tpLists'
-alias tpl='$editorChoice ~/Dropbox/Notes/tpLists'
+alias list='$editorChoice ~/Dropbox/notes/tpLists'
+alias lists='$editorChoice ~/Dropbox/notes/tpLists'
+alias tpl='$editorChoice ~/Dropbox/notes/tpLists'
 
 ### Processes
 alias tu='top -o cpu'
@@ -39,13 +46,15 @@ alias psg='ps -e | grep '			# find process with grep
 alias ph="nph"
 alias bb='bbedit'
 alias bbf='bbfind'
+alias aa='atom'
 # alias ql='qlmanage -p &>/dev/null'
 alias redock='killall Dock'         # Restart dock
 alias refinder='killall Finder'		# Restart finder
-alias mdf="mdfind -onlyin ." 
+alias mdf="mdfind -onlyin ."
 
 ### Listing
 alias l='ls -alh'
+alias lss='ls -lhS'
 alias ll='ls –color=always -alh | less'
 alias lr='ls -alhsr'
 alias lrl='ls –color=yes -alhsr | less'
@@ -55,7 +64,7 @@ alias lg='ls | grep -i '  # list with grep
 # alias lga='grep -Hrnl $#argv ./ '  # list with grep
 
 
-### Directories
+### Me Directories
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -64,26 +73,23 @@ alias -- -='cd -'
 alias app="cd /Applications"
 alias bin="cd ~/bin"
 alias code='cd ~/Dropbox/code'
-alias beta='cd ~/Dropbox/code/_beta'
 alias db="cd ~/Dropbox"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
-alias nt='cd ~/Dropbox/Notes'
+alias nt='cd ~/Dropbox/notes'
 alias lb="cd ~/Library"
 alias pictures="cd ~/Pictures"
-alias tr='cd ~/Transporter'
 
-# qcom
-alias qn='cd /Volumes/qvault/qnotes'
-alias qc='cd /Volumes/qvault/qcode'
-alias qn='cd /Volumes/qvault/qnotes'
-alias qi='cd /Volumes/qvault/_qinbox'
-alias qa='cd /Volumes/qvault/qarchive'
-alias qd='cd /Volumes/qvault/_qdraft'
-alias qv='cd /Volumes/qvault'
+# Work Directories
+alias q="cd ~/OneDrive\ -\ Qualcomm"
+alias qd="cd ~/OneDrive\ -\ Qualcomm/qDocuments"
+alias qi="cd ~/OneDrive\ -\ Qualcomm/_qInbox"
+alias qn="cd ~/OneDrive\ -\ Qualcomm/qNotes"
+alias qa="cd ~/OneDrive\ -\ Qualcomm/qActive"
+alias qc="cd ~/OneDrive\ -\ Qualcomm/qCode"
 
 ### Unix & Custom Tools
-alias vi='/usr/bin/vim' 
+alias vi='/usr/bin/vim'
 alias chmodx='chmod +x'
 
 # tree with directories shown
@@ -96,9 +102,8 @@ fi
 # alias tree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
 
 ### Git
-alias g='git status'
+alias g='git status -sb'
 alias ga='git add -A .'
-alias gl='git log --decorate --oneline'
 alias gco='git checkout'
 alias gci='git commit -am'
 alias gpush='git push origin master'
@@ -111,3 +116,17 @@ alias grm='git rm'
 alias gd='git diff'
 alias gk='gitk --all 2> /dev/null &'
 alias gr='git remote update; git status -uno'
+
+
+alias gcm="git commit -am"
+alias gpl="git pull"
+alias gps="git push"
+alias gl="git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'"
+alias gll="git log --graph --stat --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'"
+alias gdiff="git diff"
+alias greset="git reset HEAD"
+alias goops="git reset --hard HEAD"
+alias gsh="git stash"
+alias gnuke="git branch -D"
+alias gbr="git checkout -b"
+alias squish="git commit -a --amend -C HEAD"
