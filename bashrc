@@ -5,5 +5,6 @@ source ~/Dropbox/code/dotfiles/bash/config
 source ~/Dropbox/code/dotfiles/bash/env
 source ~/Dropbox/code/dotfiles/bash/functions
 source ~/.git-completion
+source ~/.git-prompt
 
 

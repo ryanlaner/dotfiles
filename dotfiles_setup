@@ -44,12 +44,12 @@ if [ -d ~/Dropbox/code/dotfiles ]; then
             echo "Symlinked --> ssh/config"
         fi
 
-        if [[ -f ~/.atom ]]; then
-            echo "Exists --> atom"
-        else
-            ln -s $DOT_PATH/atom ~/.atom
-            echo "Symlinked --> atom"
-        fi
+#         if [[ -f ~/.atom ]]; then
+#             echo "Exists --> atom"
+#         else
+#             ln -s $DOT_PATH/atom ~/.atom
+#             echo "Symlinked --> atom"
+#         fi
 
 
 else
