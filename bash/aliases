@@ -81,12 +81,12 @@ alias lb="cd ~/Library"
 alias pictures="cd ~/Pictures"
 
 # Work Directories
-alias q="cd ~/OneDrive\ -\ Qualcomm"
-alias qd="cd ~/OneDrive\ -\ Qualcomm/qDocuments"
-alias qi="cd ~/OneDrive\ -\ Qualcomm/_qInbox"
-alias qn="cd ~/OneDrive\ -\ Qualcomm/qNotes"
-alias qa="cd ~/OneDrive\ -\ Qualcomm/qActive"
-alias qc="cd ~/OneDrive\ -\ Qualcomm/qCode"
+alias q="cd ~/qDrive"
+alias qd="cd ~/qDrive/qDocuments"
+alias qi="cd ~/qDrive/_qInbox"
+alias qn="cd ~/qDrive/qNotes"
+alias qa="cd ~/qDrive/qActive"
+alias qc="cd ~/qDrive/qCode"
 
 ### Unix & Custom Tools
 alias vi='/usr/bin/vim'
