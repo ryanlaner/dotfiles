@@ -33,3 +33,6 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# added by Anaconda3 4.2.0 installer
+export PATH="/Users/ryanlaner/anaconda/bin:$PATH"

@@ -76,18 +76,6 @@ function __rm_single_file(){
     fi
 }
 
-### Dash (replace man)
-
-function dman()
-{
-    open "dash://u:$*"
-}
-
-# Open argument in Dash
-function dash() {
-	open "dash://$*"
-}
-
 
 ### Git
 # Commit verbose with command line free from commit message

@@ -6,7 +6,6 @@ alias reload='source ~/.bashrc'
 alias o='open'
 alias f='open -a Finder .'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-alias man=dman # dman function in functions bash
 alias wifi="networksetup -setairportpower en0"
 alias con="tail -40 -f /var/log/system.log"
 alias h="history"
