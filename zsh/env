@@ -3,11 +3,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/bin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:/usr/texbin
 export PATH=$PATH:/Applications
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-eval "$(fasd --init auto)"
 
 ### Tool Path Settings
 export PATH=$PATH:/usr/local/git/bin

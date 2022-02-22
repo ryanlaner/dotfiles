@@ -2,12 +2,9 @@
 alias c='clear'
 alias e='exit'
 alias h='history'
-alias reload='source ~/.bashrc'
+alias reload='source ~/.zshrc'
 alias o='open'
 alias f='open -a Finder .'
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-alias wifi="networksetup -setairportpower en0"
-alias con="tail -40 -f /var/log/system.log"
 alias h="history"
 alias hg="history | grep "
 
@@ -15,7 +12,8 @@ alias hg="history | grep "
 alias serve="python -m SimpleHTTPServer"
 
 ### Search
-alias google='open http://www.google.com/search?q="'
+alias ggs='open http://www.google.com/search?q='
+alias dds='open https://duckduckgo.com/?q='
 
 # Search current directory and below showing file and line with search term
 alias findg="find . -type f -print0 | xargs -0 grep -Ini --color=auto"
@@ -26,15 +24,15 @@ editorChoice="bbedit"
 # editorChoice="subl"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-alias oalias='$editorChoice ~/code/dotfiles/bash/aliases'
-alias oconfig='$editorChoice ~/code/dotfiles/bash/config'
-alias oenv='$editorChoice ~/code/dotfiles/bash/env'
-alias ofunctions='$editorChoice ~/code/dotfiles/bash/functions'
+alias oalias='$editorChoice ~/code/dotfiles/zsh/aliases'
+alias oconfig='$editorChoice ~/code/dotfiles/zsh/config'
+alias oenv='$editorChoice ~/code/dotfiles/zsh/env'
+alias ofunctions='$editorChoice ~/code/dotfiles/zsh/functions'
 
 ### Open note Files
-alias list='$editorChoice ~/Dropbox/notes/tpLists'
-alias lists='$editorChoice ~/Dropbox/notes/tpLists'
-alias tpl='$editorChoice ~/Dropbox/notes/tpLists'
+#alias list='$editorChoice ~/Dropbox/notes/tpLists'
+#alias lists='$editorChoice ~/Dropbox/notes/tpLists'
+#alias tpl='$editorChoice ~/Dropbox/notes/tpLists'
 
 ### Processes
 alias tu='top -o cpu'
@@ -42,25 +40,17 @@ alias tm='top -o vsize'
 alias psg='ps -e | grep '			# find process with grep
 
 ### Tool & Apps
-alias ph="nph"
 alias bb='bbedit'
 alias bbf='bbfind'
-alias aa='atom'
-# alias ql='qlmanage -p &>/dev/null'
 alias redock='killall Dock'         # Restart dock
 alias refinder='killall Finder'		# Restart finder
 alias mdf="mdfind -onlyin ."
 
 ### Listing
 alias l='ls -alh'
-alias lss='ls -lhS'
-alias ll='ls –color=always -alh | less'
-alias lr='ls -alhsr'
-alias lrl='ls –color=yes -alhsr | less'
+alias ll='ls -alh'
 alias l1='ls -1'
-alias l1l='ls –color=always -1 | less'
 alias lg='ls | grep -i '  # list with grep
-# alias lga='grep -Hrnl $#argv ./ '  # list with grep
 
 
 ### Me Directories
@@ -72,20 +62,10 @@ alias -- -='cd -'
 alias app="cd /Applications"
 alias bin="cd ~/bin"
 alias code='cd ~/code'
-alias db="cd ~/Dropbox"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
-alias nt='cd ~/Dropbox/notes'
 alias lb="cd ~/Library"
 alias pictures="cd ~/Pictures"
-
-# Work Directories
-alias q="cd ~/qDrive"
-alias qd="cd ~/qDrive/qDocuments"
-alias qi="cd ~/qDrive/_qInbox"
-alias qn="cd ~/qDrive/qNotes"
-alias qa="cd ~/qDrive/qActive"
-alias qc="cd ~/qDrive/qCode"
 
 ### Unix & Custom Tools
 alias vi='/usr/bin/vim'

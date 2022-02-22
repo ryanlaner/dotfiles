@@ -1,17 +1,17 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Dotfiles Management
 
 # ./dotfiles
-#     /bash
+#     /zsh
 #         /aliases
 #         /config
 #         /env
 #         /functions
 #     /ssh
 #         config
-#     bashrc
-#     bash_profile
+#     zshrc
+#     zshenv
 #     gitconfig
 #     gitignore
 #     pythonrc

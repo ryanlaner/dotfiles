@@ -1,25 +1,5 @@
 ### Utility
 
-# Batch change extensions
-
-function chgext {
-    for file in *.$1 ; do mv "$file" "${file%.$1}.$2" ; done
-}
-
-
-
-# Finder to terminal
-
-function cdf {
-    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
-    
-    if [ "$target" != "" ]; then
-        cd "$target"; pwd
-    else
-        echo 'No Finder window found' >&2
-    fi
-}
-
 # Quick look
 
 function ql {
@@ -83,48 +63,6 @@ function gg() {
     git commit -v -a -m "$*"
 }
 
-
-### Finder Tag list
-# via [Brett Terpstra](http://brettterpstra.com/2013/10/28/mavericks-tags-spotlight-and-terminal/)
-# List files with specified Finder tags in current directory
-# Works with partial words starting from the beginning of the word
-
-lst() {
-	# if the first argument is "AND" (case insensitive),
-	# a boolean AND search will be used. Defaults to OR.
-	bool="OR"
-	[[ $1 =~ "and" ]] && bool="AND" && shift
- 
-	first=true
-	for tag in $@; do
-		if $first; then
-			query="tag:$tag"
-			first=false
-		else
-			query="$query $bool tag:$tag"
-		fi
-	done
- 
-	results=$(mdfind -onlyin . "$query")
-	for line in $results; do
-		echo ${line#`pwd`/} # make result paths relative to pwd
-	done
-}
-
-# iterm
-
-tab() # new tab from current dir
-{
-osascript -e "
-tell application \"iTerm\"
- tell the first terminal
-  launch session \"Default Session\"
-  tell the last session
-   write text \"cd $(pwd)\"
-  end tell
- end tell
-end tell"
-}
 
 # tar/zip extraction
 
